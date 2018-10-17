@@ -1,10 +1,10 @@
-package controller;
+package com.bam.icc.controller;
 
-import model.Message;
+import com.bam.icc.model.Message;
+import com.bam.icc.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import service.MessageService;
 
 import java.util.List;
 

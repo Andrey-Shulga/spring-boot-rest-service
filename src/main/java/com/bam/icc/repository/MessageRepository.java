@@ -1,6 +1,6 @@
-package repository;
+package com.bam.icc.repository;
 
-import model.Message;
+import com.bam.icc.model.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MessageRepository extends JpaRepository<Message, Long> {

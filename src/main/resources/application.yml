@@ -6,8 +6,8 @@ spring:
 
   #Connection to DB
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost/vts
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/test?autoReconnect=true
     username: root
     password: root
   jpa:
@@ -15,41 +15,9 @@ spring:
       hibernate:
         temp:
           use_jdbc_metadata_defaults: false
-    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
 
-  # Apache KAFKA settings
-  kafka:
-    consumer:
-      auto-offset-reset: earliest
-      enable-auto-commit: false
-    bootstrap-servers: kafka-sbox.epm-eco.projects.epam.com:9093
-    client-id: epm-vts.rs.consumer.dev-ag27
-
-    properties:
-      security:
-        protocol: SSL
-      heartbeat:
-        interval:
-          ms: 5000
-
-    ssl:
-      key-password: 123456
-      key-store-location: file:c:/apache-tomcat-9.0.4/conf/kafka-ssl/guest.epam.com.keystore
-      key-store-password: 123456
-      trust-store-location: file:c:/apache-tomcat-9.0.4/conf/kafka-ssl/guest.epam.com.truststore
-      trust-store-password: 123456
-    listener:
-      concurrency: 11
-
-#Declared topics by TABLE_NAME
-tai:
-  tableTopicMap:
-    T_JOB_FUNCTION: datahub.datafactory.epam.cdm.EpamJobFunction
-    M_EMPLOYEE:  datahub.datafactory.epam.cdm.UserInfo
-
-
-
-#JMX Authenticator
-jmx:
-  login: vtsJmx
-  password: vts@Jmx164
+server:
+  servlet:
+    context-path: /api
+  port: 8080

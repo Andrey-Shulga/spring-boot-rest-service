@@ -1,9 +1,9 @@
-package service;
+package com.bam.icc.service;
 
-import model.Message;
+import com.bam.icc.model.Message;
+import com.bam.icc.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.MessageRepository;
 
 import java.util.List;
 
